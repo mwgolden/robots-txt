@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotsDotTxt", "RobotsDotTxt\RobotsDotTxt.csproj", "{1D98C463-270E-4191-9CEF-1E2E0312E7C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotsDotTxt.Tests", "RobotsDotTxt.Tests\RobotsDotTxt.Tests.csproj", "{0C508E81-9BB5-4366-B216-757D075A0F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "robots", "robots\robots.csproj", "{F1E2A8FE-8A9C-47A6-850D-D98A25436503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D98C463-270E-4191-9CEF-1E2E0312E7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D98C463-270E-4191-9CEF-1E2E0312E7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D98C463-270E-4191-9CEF-1E2E0312E7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D98C463-270E-4191-9CEF-1E2E0312E7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C508E81-9BB5-4366-B216-757D075A0F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C508E81-9BB5-4366-B216-757D075A0F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C508E81-9BB5-4366-B216-757D075A0F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C508E81-9BB5-4366-B216-757D075A0F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E2A8FE-8A9C-47A6-850D-D98A25436503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E2A8FE-8A9C-47A6-850D-D98A25436503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E2A8FE-8A9C-47A6-850D-D98A25436503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E2A8FE-8A9C-47A6-850D-D98A25436503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
