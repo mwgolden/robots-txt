@@ -17,9 +17,15 @@ public class Matcher : ParseHandler {
             handleUserAgent(value);
         }
         else if(userAgentMatch || isUniversalAgent){
-            Debug.WriteLine($"Checking: {Url.AbsolutePath}");
+            handleRule(key, value, lineNumber);
+        }
+    }
+    public void handleRule(string key, string value, int lineNumber){
+        bool isUrlMatch = Url.AbsoluteUri.Contains(value.Trim()) || value.Trim().Length == 0;
+        if(isUrlMatch){
             Debug.WriteLine($"[{lineNumber}]  {key}: {value}");
         }
+        
     }
     public bool IsUserAgent(string key){
         return key == "User-agent";
@@ -29,12 +35,8 @@ public class Matcher : ParseHandler {
             userAgentMatch = isUniversalAgent = false;
             return;
         }
-        if(value.Trim() == UserAgent){
-            userAgentMatch = true;
-        }
-        if(value.Trim() == UNIVERSAL_AGENT){
-            isUniversalAgent = true;
-        }
+        userAgentMatch = value.Trim() == UserAgent;
+        isUniversalAgent = value.Trim() == UNIVERSAL_AGENT;
     }
 
     public bool AllowedByRobots(Stream stream){
