@@ -13,3 +13,4 @@ Debug.WriteLine($"Absolute Path: {url.AbsoluteUri}");
 string userAgent = "IsraBot";
 Matcher matcher = new Matcher(url, userAgent);
 bool allowed = matcher.AllowedByRobots(fs);
+Debug.WriteLine($"{url.AbsoluteUri} is allowed? : {allowed}");

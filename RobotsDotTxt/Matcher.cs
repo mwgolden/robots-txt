@@ -6,6 +6,7 @@ public class Matcher : ParseHandler {
     public string UserAgent { get; }
     private bool userAgentMatch = false;
     private bool isUniversalAgent = false;
+    private int score = 0;
     private const string UNIVERSAL_AGENT = "*";
 
     public Matcher(Uri url, string userAgent){
@@ -24,6 +25,12 @@ public class Matcher : ParseHandler {
         bool isUrlMatch = Url.AbsoluteUri.Contains(value.Trim()) || value.Trim().Length == 0;
         if(isUrlMatch){
             Debug.WriteLine($"[{lineNumber}]  {key}: {value}");
+            if(key.Trim().ToLower() == "disallow"){
+                score -= value.Trim().Length;
+            }
+            if(key.Trim().ToLower() == "allow"){
+                score += value.Trim().Length;
+            }
         }
         
     }
@@ -40,6 +47,7 @@ public class Matcher : ParseHandler {
     }
 
     public bool AllowedByRobots(Stream stream){
+        score = 0;
         byte[] b = new byte[2038];
         using(ParseRobotsDotTxt rdt = new ParseRobotsDotTxt(stream, this)){
     
@@ -49,6 +57,6 @@ public class Matcher : ParseHandler {
                 continue;
             }
         }
-        return false;
+        return score >= 0;
     }
 }
